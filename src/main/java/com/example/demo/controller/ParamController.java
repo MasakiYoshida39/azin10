@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 //↓コントロールと認識させるためのアノテーション
 @Controller
-public class WelcomeMvcController {
+public class ParamController {
 	
 	//modelのやり方
 	//Getリクエストを送るため
