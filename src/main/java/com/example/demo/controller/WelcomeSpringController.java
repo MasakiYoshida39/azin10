@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WelcomeSpringController {
 	//Getリクエストを送るため
-	@GetMapping("/hello")
+	@GetMapping("/welcome")
 	//public Stringは変えられない
-	public String hello() {
-		// テンプレートに hello-spring.html を指定
+	public String welcome() {
+		// テンプレートに welcome-spring.htmlを指定
 		//.htmlは省略可能
-		return "hello-spring";
+		return "welcome-spring";
 	}
 
 }
