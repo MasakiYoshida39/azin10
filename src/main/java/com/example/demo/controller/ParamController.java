@@ -4,42 +4,21 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 //↓コントロールと認識させるためのアノテーション
 @Controller
 public class ParamController {
+
+	@GetMapping("/get-param")
+	//リクエストをstringに入れる 引数ぎゃくでもOK 
+	public String getParam(@RequestParam String greeting,
+//	public String getParam(@RequestParam(name="g") String greeting,
+//	public String getParam(@RequestParam(required=false) String greeting,
+//	public String getParam(@RequestParam(defaultValue="(未設定)") String greeting,
+			Model model) {
 	
-	//modelのやり方
-	//Getリクエストを送るため
-	@GetMapping("/welcome-m")
-	//public Stringは変えられない
-	//welcomeMなんでもOK
-	//引数のmodelはなんでもOK
-	public String welcomeM(Model model) {
+		model.addAttribute("mGreeting", greeting);
 		
-		model.addAttribute("greeting", "Hello");
-		model.addAttribute("welcome", "Welcome MVC (Model)");
-		// テンプレートに welcome-spring.htmlを指定
-	    //.htmlは省略可能
-		return "welcome-mvc";
-	}
-	
-	
-	
-	 //ModelAndViewのやり方
-	//Getリクエストを送るため
-	@GetMapping("/welcome-mv")
-	//public Stringは変えられない
-	//welcomeMｖなんでもOK
-	//引数のmvはなんでもOK
-	public ModelAndView welcomeMv(ModelAndView mv) {
-		
-		mv.addObject("greeting", "Hello");
-		mv.addObject("welcome", "Welcome MVC (ModelAndView)");
-		// テンプレートに welcome-spring.htmlを指定
-	    //.htmlは省略可能
-		mv.setViewName("welcome-mvc");
-		
-		return mv;
+		return "display";
 	}
 }
