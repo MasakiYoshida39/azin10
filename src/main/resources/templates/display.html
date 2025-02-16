@@ -1,11 +1,8 @@
-
 <!DOCTYPE html>
-<!-- 下 thymeleaf用のHTML宣言-->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Welcome Spring</title>
-<!-- 下 CSS宣言th:タイムリフだから-->
+<title>Parameter</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -13,6 +10,8 @@
 	<h2>取得したパラメータの表示</h2>
 
 	<p th:text="${mGreeting}">挨拶表示</p>
+
+	<a th:href="@{/input}">入力画面へ</a>
 
 </body>
 </html>
