@@ -28,7 +28,9 @@ public class ReviewController {
 	/*--- レビュー登録リクエスト（登録画面より） ---*/
 	@PostMapping("/regist-review")
 	public String registReview(
+			//@Validated リクエストパラメータに行く際に確認
 			@Validated @ModelAttribute ReviewRegistForm form,
+			//ここからエラー処理
 			BindingResult result) {
 
 		// 入力エラーがある場合には レビュー登録画面に戻す
